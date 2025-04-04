@@ -22,50 +22,50 @@ import java.util.Collection;
 @Table(name = "users")
 public class UserEntity implements UserDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(nullable = false)
-    private String username;
+  @Column(nullable = false)
+  private String username;
 
-    @Column(nullable = false)
-    private String password;
+  @Column(nullable = false)
+  private String password;
 
-    @Column(nullable = false, unique = true)
-    private String email;
+  @Column(nullable = false, unique = true)
+  private String email;
 
-    /**
-     * Returns the username used to authenticate the user.
-     * <p>
-     * Currently, no roles are implemented, so this method returns null.
-     * </p>
-     *
-     * @return null, as roles are not implements yet.
-     */
-    @Override()
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null; // No roles for now
-    }
+  /**
+   * Returns the username used to authenticate the user.
+   * <p>
+   * Currently, no roles are implemented, so this method returns null.
+   * </p>
+   *
+   * @return null, as roles are not implements yet.
+   */
+  @Override()
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return null; // No roles for now
+  }
 
-    @Override()
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+  @Override()
+  public boolean isAccountNonExpired() {
+    return true;
+  }
 
-    @Override()
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+  @Override()
+  public boolean isAccountNonLocked() {
+    return true;
+  }
 
-    @Override()
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+  @Override()
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
 
-    @Override()
-    public boolean isEnabled() {
-        return true;
-    }
+  @Override()
+  public boolean isEnabled() {
+    return true;
+  }
 
 }
